@@ -18,7 +18,7 @@ include 'libs/load.php';
     
 
     <!-- Bootstrap core CSS -->
-<link href="/app/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -59,22 +59,22 @@ include 'libs/load.php';
       </div>
     </div>
   </div>
- <? load_template('_header');  ?>
+<?load_Template('_header');?>
 </header>
 
 <main>
 
-<? load_Template('__calltoaction')?>
+<?load_Template('__calltoaction');?>
 
-<? load_Template('__photos');?>
+<?load_Template('__photos')?>
 
 </main>
-
-<? load_Template('__footer')?>
-
+<?load_Template('__footer')?>
 
 
-    <script src="/app/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="/photogram/assets/dist/js/bootstrap.bundle.min.js"></script>
 
       
   </body>
