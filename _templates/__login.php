@@ -1,6 +1,6 @@
 
 <main class="form-signin">
-  <form method="$_GET" action="test.php">
+<form method="$_POST" action="test.php">
     <img class="mb-4" src="https://git.selfmade.ninja/uploads/-/system/appearance/logo/1/Logo_Dark.png " alt="" width="" height="50">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
