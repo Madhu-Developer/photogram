@@ -1,6 +1,9 @@
 <?php
 
 include 'libs/load.php';
+  
+$username = $_POST['email_address'];
+$password = $_POST['password'];
 
 ?>
 <!doctype html>
@@ -75,6 +78,7 @@ include 'libs/load.php';
 <? load_Template('__login')?>
 
 </main>
+
 <?load_Template('__footer')?>
 
 
