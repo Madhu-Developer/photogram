@@ -7,19 +7,16 @@ include 'libs/load.php';
 <html lang="en">
   <? load_Template('__head')?>
   <body>
-      
+  
     <?load_template('_header');?>
 
 <main>
 
-<? load_Template('__login')?>
+<? load_Template('__signup')?>
 
 </main>
 
 <?load_Template('__footer')?>
-
-
-
 
     <script src="/photogram/assets/dist/js/bootstrap.bundle.min.js"></script>
 
