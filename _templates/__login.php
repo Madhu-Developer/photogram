@@ -6,7 +6,7 @@
 $result = validate_credientials($username,$password);
 
 if($result){ ?>
-<p style="font-size:100px" >&#128151</p>
+<p style="font-size:100px">&#128151</p>
 <?
 }else{
     ?>

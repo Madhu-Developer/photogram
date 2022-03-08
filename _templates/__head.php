@@ -9,11 +9,11 @@
       <!-- Bootstrap core CSS -->
   <link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <?if (file_exists($_SERVER['DOCUMENT_ROOT'].'/photogram/css/'.basename($_SERVER['PHP_SELF'], ".php").".css")) {?>
+ <?if (file_exists($_SERVER['DOCUMENT_ROOT'].'/photogram/css/'.basename($_SERVER['PHP_SELF'], ".php").".css")) {?> 
     <link
         href="/photogram/css/<?=basename($_SERVER['PHP_SELF'], ".php")?>.css"
         rel="stylesheet">
-    <?}?>
+<?}?> 
 
 
 </head>

@@ -21,15 +21,7 @@ include 'includes/mic.class.php'
     ?>
 </pre>
 
-<?php
 
-$mic->brand = 'boya';
-
-//print("model of mic is ".$mic->getbrand());
-print($mic->brand);
-
-
-?>
 
 
 
