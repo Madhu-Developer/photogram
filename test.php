@@ -1,7 +1,7 @@
 <pre>
 <?php
 include 'libs/load.php';
-include 'includes/mic.class.php'
+
     //print("_server\n");
    // print_r($_SERVER);
     //print("_globals\n");
@@ -16,8 +16,15 @@ include 'includes/mic.class.php'
       //print_r($_POST);
     //print("_request\n");
     //print_r($_REQUEST);//
-  //signup('admin','admin','admin@admin.com','9876543210')
-  
+    
+    if (signup( "admin", "admin", "madhu@admin" , "9876543210" )){
+      echo true ;
+
+    }else{
+      echo false;
+    }
+
+
     ?>
 </pre>
 
