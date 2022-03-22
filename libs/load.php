@@ -1,4 +1,6 @@
 <?php
+include_once 'includes/database.class.php';
+
 function load_Template($name){
     //  print(" includeing ". __DIR__."/../_templates/$name.php ");   *path* 
     include __DIR__."/../_templates/$name.php";  
@@ -15,18 +17,7 @@ function validate_credientials($username, $password)
 
 function signup($user,$pass,$email,$phone){
    
-    
-$servername = "mysql.selfmade.ninja";
-$username = "photogram";
-$password = "photo123";
-$dbname = "photogram_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+   $conn = database::getconnection();
 
 $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `blocked`, `active`)
 VALUES ('$user', '$pass', '$email', '$phone', '0', '1');";

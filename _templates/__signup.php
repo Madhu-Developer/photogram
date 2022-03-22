@@ -6,7 +6,7 @@ $username = $_POST['usename'];
 $password = $_POST['password'];
 $email = $_POST['email_address'];
 $phone = $_POST['phone'];
-$error = signup($username,$password,$email,$phone);
+$error = user::signup($username,$password,$email,$phone);
 $signup = true ;
 
 }
