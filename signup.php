@@ -1,6 +1,8 @@
 <?php
 
 include 'libs/load.php';
+include_once 'includes/user.class.php';
+include_once 'includes/database.class.php';
 
 ?>
 <!doctype html>
