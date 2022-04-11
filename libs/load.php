@@ -1,7 +1,8 @@
 <?php
 include_once 'includes/user.class.php';
 include_once 'includes/database.class.php';
-
+include_once 'includes/session.class.php';
+session::start();
 
 
 function load_Template($name){
