@@ -5,6 +5,7 @@ class User
     private $conn;
     public static function signup($user, $pass, $email, $phone)
     {
+        $pass = md5($pass);
         $conn = Database::getConnection();
         $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `active`)
         VALUES ('$user', '$pass', '$email', '$phone', '1');";
