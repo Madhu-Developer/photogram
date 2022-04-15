@@ -16,6 +16,8 @@ include 'libs/load.php';
       //print_r($_POST);
     //print("_request\n");
     //print_r($_REQUEST);//
+
+  
     
     if (signup( "admin", "admin", "madhu@admin" , "9876543210" )){
       echo true ;

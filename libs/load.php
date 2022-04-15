@@ -12,12 +12,19 @@ function load_Template($name){
 
 function validate_credientials($username, $password)
 {
-    if ($username=="madhu@mad.com" and $password=="1234") {
+
+  
+    if ($username=="madhu@mad.com" and md5($password=="12345")) {
+       // echo "$password";
         return 1 ;
     } else {
+        echo "error" ;
         return 0;
     }
 }
+
+
+
 
 
 
