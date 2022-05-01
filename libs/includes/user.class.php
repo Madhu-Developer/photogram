@@ -5,7 +5,11 @@ class User
     private $conn;
     public static function signup($user, $pass, $email, $phone)
     {
-        $pass = md5($pass);
+        $options = [
+            'cost' => 7,
+        ];
+        
+        $pass = password_hash($pass, PASSWORD_BCRYPT, $options);
         $conn = Database::getConnection();
         $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `active`)
         VALUES ('$user', '$pass', '$email', '$phone', '1');";
@@ -22,13 +26,13 @@ class User
     }
 
     public static function login($user , $pass ){
-        $pass = md5($pass);
+       
         $conn = Database::getConnection();
         $query = "SELECT * FROM `auth` WHERE `username` = '$user'" ;
         $result = $conn->query($query) ; 
         if($result->num_rows == 1){
  $row = $result->fetch_assoc();
- if($row["password"] == $pass ){
+ if(password_verify($pass, $row['password'])){
     return $row ;
  }else{
      return false ;

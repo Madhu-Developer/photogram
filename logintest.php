@@ -1,8 +1,8 @@
 <?php
 include "libs/load.php" ;
 
-$user = "ganesh" ;
-$pass = "abcd" ;
+$user = "fooboo" ;
+$pass = "madhu@2003";
 
 $result = User::login($user , $pass );
 if(isset($_GET[logout])){
