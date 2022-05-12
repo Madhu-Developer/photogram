@@ -69,7 +69,37 @@ class User
         } else {
             return null ;
         }
-    }    
+    }  
+    
+    // this is the function to set data for the user 
+    private function _set_data() {
+
+        if(!$this->conn ){
+            $this->conn = Database::getconnection();
+        }
+        $sql = "UPDATE `user` SET `$var` = '$data ' WHERE `id` = '$this->id;'";
+        if($this->conn->query($sql)){
+            return true ;
+        }  else {
+            return false ;
+        } 
+
+    }
+     // to check the date is in the correct format eg : 2022/02/02 
+       public function setdob($year , $month ,$date ){
+           if(checkdate($month , $year ,$date )){
+               return $this->_set_date('dob' , "$year.$month.$date" );
+           } else {
+               return false ;
+           }
+       }
+   
+       public function getUsername()
+    {
+        return $this->username;
+    }
+
+ 
 
     public function setbio(){
       
