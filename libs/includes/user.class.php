@@ -31,10 +31,10 @@ class User
         $query = "SELECT * FROM `auth` WHERE `username` = '$user'" ;
         $result = $conn->query($query) ; 
         if($result->num_rows == 1){
- $row = $result->fetch_assoc();
- if(password_verify($pass, $row['password'])){
-    return $row ;
- }else{
+        $row = $result->fetch_assoc();
+        if(password_verify($pass, $row['password'])){
+        return $row ;
+         }else{
      return false ;
  }
         }else{
@@ -44,9 +44,35 @@ class User
 
     }
 
+          
+    public function __construct($username){
+        $this->conn = Database::getConnection(); // checking the connection
+        $sql = "SELECT * FROM `auth` WHERE `username` = $username LIMIT 1 "; 
+        $result = $this->$conn->query($sql); // get data from the database 
+        if( $result->num_rows ){ // checking wheter the data is in the result vriyable 
+            $row = $result->fetch_assoc(); // fetching data 
+            $this->id= $row['id'];
+        } else {
+            throw new Expection ("no username found");
+                  }
+    }
+/// this is the function to get data from the database 
+    private function  _get_data ($var)
+    { 
+        if(!$this->conn ){
+            $this->conn = Database::getconnection();
+        }
+        $sql= "SELECT `$var` FROM `user` WHERE `id` = $this->id "; 
+        $result = $this->conn->query($sql);
+        if($result->num_rows ){
+            return $result->fetch_asso()["$var"] ;
+        } else {
+            return null ;
+        }
+    }    
 
     public function setbio(){
-
+      
     }
 
     public function getbio(){
@@ -66,10 +92,6 @@ class User
 
     }
 
-         
-    public function __construct($username){
-        $this->conn = Database::getConnection();
-        $this->conn->query();
-    }
+    
 
 }
