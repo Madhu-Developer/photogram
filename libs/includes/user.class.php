@@ -56,6 +56,18 @@ class User
             throw new Expection ("no username found");
                   }
     }
+/// we are using php magics (call function)
+public function __call($name , $property)
+{
+    $property = preg_replace("/[^0-9a-zA-Z]/", "", substr($name, 3));
+    $property = strtolower(preg_replace('/\B([A-Z])/', '_$1', $property));
+    if(substr($name , 0 , 3) == 'get'){
+            return $this->_get_data($property);
+    } elseif(substr($name , 0 ,3 )=='set'){
+        return $this->_set_data($property, $argument[0]);
+    } 
+}
+
 /// this is the function to get data from the database 
     private function  _get_data ($var)
     { 
