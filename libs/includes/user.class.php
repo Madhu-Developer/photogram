@@ -33,7 +33,7 @@ class User
         if($result->num_rows == 1){
         $row = $result->fetch_assoc();
         if(password_verify($pass, $row['password'])){
-        return $row ;
+        return $row[$username] ;
          }else{
      return false ;
  }
@@ -76,7 +76,7 @@ public function __call($name , $property)
         }
         $sql= "SELECT `$var` FROM `user` WHERE `id` = $this->id "; 
         $result = $this->conn->query($sql);
-        if($result->num_rows ){
+        if($result and $result->num_rows == 1 ){
             return $result->fetch_asso()["$var"] ;
         } else {
             return null ;
