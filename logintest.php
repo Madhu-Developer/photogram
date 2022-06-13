@@ -1,11 +1,11 @@
 <?php
 include "libs/load.php" ;
 
-$user = "fooboo1" ;
-$pass = "madhu@2003";
+$user = "self" ;
+$pass = "self";
 
 $result = User::login($user , $pass );
-if(isset($_GET[logout])){
+if(isset($_GET['logout'])){
     session::destroy();
     die("session destroyed , <a href='login.php'> login here </a>");
     
