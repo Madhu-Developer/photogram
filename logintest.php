@@ -25,7 +25,7 @@ if(session::get('is_loggedin')){
     print("no session found , trying to login....\n");
     $result = User::login($user , $pass );
     if($result){
-        $userobj = new user($usernmae);
+        $userobj = new user($username);
 
         echo "loged in as ,". $userobj->getusername(); 
         session::set('is_loggedin' , true);

@@ -33,7 +33,7 @@ class User
         if($result->num_rows == 1){
         $row = $result->fetch_assoc();
         if(password_verify($pass, $row['password'])){
-        return $row[$username] ;
+        return $row['username'] ;
          }else{
      return false ;
  }
